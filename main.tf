@@ -3,7 +3,7 @@ provider "kubernetes" {
   config_path = "~/.kube/config"
 }
 
-
+#namespace
 resource "kubernetes_namespace" "prod_namespace" {
   metadata {
     name = "prod"

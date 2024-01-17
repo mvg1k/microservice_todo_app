@@ -13,3 +13,4 @@ resource "kubernetes_service" "nginx_service" {
    type = "NodePort"
  }
 }
+#service for nginx
