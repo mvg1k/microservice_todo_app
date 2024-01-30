@@ -1,0 +1,8 @@
+namespace: stage
+deployment:
+  name: frontend-deployment-stage
+replicas: 2
+service:
+  name: frontend-service-stage
+  type: ClusterIP
+  port: 8003

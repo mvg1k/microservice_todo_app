@@ -1,0 +1,8 @@
+namespace: dev
+deployment:
+  name: frontend-deployment-dev
+replicas: 1
+service:
+  name: frontend-service-dev
+  type: ClusterIP
+  port: 8001
