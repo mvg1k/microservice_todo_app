@@ -4,8 +4,8 @@ metadata:
   name: {{ .Values.service.name }}
 spec:
   ports:
-    - name: "9411"
+    - name: zipkin
       port: {{ .Values.service.port }}
-      targetPort: 9411
+      targetPort:  9411
   selector:
     app: zipkin

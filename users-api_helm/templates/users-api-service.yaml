@@ -4,7 +4,7 @@ metadata:
   name: {{ .Values.service.name }}
 spec:
   ports:
-      port: {{ .Values.service.port }}
-      targetPort:  8083
+    - port: {{ .Values.service.port }}
+      targetPort:   8083
   selector:
     app: users-api
