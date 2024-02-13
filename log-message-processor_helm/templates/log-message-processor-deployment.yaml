@@ -19,7 +19,7 @@ spec:
             - name: REDIS_CHANNEL
               value: log_channel
             - name: REDIS_HOST
-              value: redis-queue
+              value: redis-queue-service
             - name: REDIS_PORT
               value: "6379"
             - name: ZIPKIN_URL
