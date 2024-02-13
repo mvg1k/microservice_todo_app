@@ -2,3 +2,7 @@ namespace: dev
 deployment:
   name: redis-queue-deployment
 replicas: 1
+service:
+  name: redis-queue-service
+  type: ClusterIP
+  port: 6379

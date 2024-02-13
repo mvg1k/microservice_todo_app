@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service.name }}
+spec:
+  ports:
+    - name: redis-queue
+      port: {{ .Values.service.port }}
+      targetPort:  6379
+  selector:
+    app: redis-queue
