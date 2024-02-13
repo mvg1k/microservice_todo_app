@@ -21,7 +21,7 @@ spec:
             - name: SERVER_PORT
               value: "8083"
             - name: SPRING_ZIPKIN_BASE_URL
-              value: http://zipkin:9411
+              value: http://zipkin-service:9411
           image: mvg1k/users-api
           name: users-api
       restartPolicy: Always
