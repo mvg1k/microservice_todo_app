@@ -1,0 +1,4 @@
+namespace: dev
+deployment:
+  name: redis-queue-deployment
+replicas: 1

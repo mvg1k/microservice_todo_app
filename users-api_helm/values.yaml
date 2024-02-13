@@ -1,0 +1,8 @@
+namespace: dev
+deployment:
+  name: users-api-deployment
+replicas: 1
+service:
+  name: todos-api-service
+  type: ClusterIP
+  port: 8083

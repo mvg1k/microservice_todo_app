@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  labels:
+    app: auth-api
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: log-message-processor
+  template:
+    metadata:
+      labels:
+        app: log-message-processor
+    spec:
+      containers:
+        - env:
+            - name: REDIS_CHANNEL
+              value: log_channel
+            - name: REDIS_HOST
+              value: redis-queue
+            - name: REDIS_PORT
+              value: "6379"
+            - name: ZIPKIN_URL
+              value: http://zipkin:9411/api/v1/spans
+          image: mvg1k/log-message-processor
+          name: log-message-processor
+      restartPolicy: Always
