@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ .Values.deployment.name }}
   labels:
-    app: auth-api
+    app: log-message-processor
 spec:
   replicas: {{ .Values.replicas }}
   selector:
