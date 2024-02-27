@@ -1,0 +1,3 @@
+[submodule "microservice-app"]
+	path = microservice-app
+	url = https://github.com/koshmanov/microservice-app-example
