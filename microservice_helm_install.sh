@@ -12,5 +12,5 @@ helm install todos-api-dev todos-api_helm/ -f todos-api_helm/values.yaml -n dev
 
 helm install users-api-dev users-api_helm/ -f users-api_helm/values.yaml -n dev
 
-helm install zipkin_helm/ -f zipkin_helm/values.yaml -n dev
+helm install zipkin-dev zipkin_helm/ -f zipkin_helm/values.yaml -n dev
 
