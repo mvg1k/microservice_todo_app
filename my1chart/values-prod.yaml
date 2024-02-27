@@ -1,8 +1,0 @@
-namespace: prod
-deployment:
-  name: frontend-deployment-prod
-replicas: 3
-service:
-  name: frontend-service-prod
-  type: ClusterIP
-  port: 8002
