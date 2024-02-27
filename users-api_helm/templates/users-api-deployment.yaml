@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  labels:
+    app: users-api
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: users-api
+  template:
+    metadata:
+      labels:
+        app: users-api
+    spec:
+      containers:
+        - env:
+            - name: JWT_SECRET
+              value: myfancysecret
+            - name: SERVER_PORT
+              value: "8083"
+            - name: SPRING_ZIPKIN_BASE_URL
+              value: http://zipkin-service:9411
+          image: mvg1k/users-api
+          name: users-api
+      restartPolicy: Always
