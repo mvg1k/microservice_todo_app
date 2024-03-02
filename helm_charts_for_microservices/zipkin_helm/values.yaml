@@ -3,6 +3,6 @@ deployment:
   name: zipkin-deployment
 replicas: 1
 service:
-  name: zipkin-service
+  name: zipkin
   type: ClusterIP
   port: 9411

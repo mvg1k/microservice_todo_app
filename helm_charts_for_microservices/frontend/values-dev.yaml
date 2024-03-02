@@ -3,6 +3,6 @@ deployment:
   name: frontend-deployment
 replicas: 1
 service:
-  name: frontend-service
+  name: frontend
   type: ClusterIP
   port: 8080

@@ -3,6 +3,6 @@ deployment:
   name: auth-api-deployment
 replicas: 1
 service:
-  name: auth-api-service
+  name: auth-api
   type: ClusterIP
   port: 8081

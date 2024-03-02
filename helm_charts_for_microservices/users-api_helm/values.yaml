@@ -3,6 +3,6 @@ deployment:
   name: users-api-deployment
 replicas: 1
 service:
-  name: users-api-service
+  name: users-api
   type: ClusterIP
   port: 8083

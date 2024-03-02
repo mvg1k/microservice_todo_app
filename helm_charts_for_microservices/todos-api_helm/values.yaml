@@ -3,6 +3,6 @@ deployment:
   name: todos-api-deployment
 replicas: 1
 service:
-  name: todos-api-service
+  name: todos-api
   type: ClusterIP
   port: 8082
