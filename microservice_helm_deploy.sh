@@ -74,9 +74,9 @@ perform_action() {
     echo "${BOLD}Processing $chart_name...${RESET}"
     
     if [ "$action" = "install" ]; then
-      helm install $chart_name "$CHARTS_DIR/${chart}_helm" -f "$CHARTS_DIR/${chart}_helm/values.yaml" -n $env
+      helm install $chart_name "$CHARTS_DIR/${chart}_helm" -f "$CHARTS_DIR/${chart}_helm/values-$env.yaml" -n $env
     elif [ "$action" = "upgrade" ]; then
-      helm upgrade $chart_name "$CHARTS_DIR/${chart}_helm" -f "$CHARTS_DIR/${chart}_helm/values.yaml" -n $env
+      helm upgrade $chart_name "$CHARTS_DIR/${chart}_helm" -f "$CHARTS_DIR/${chart}_helm/values-$env.yaml" -n $env
     elif [ "$action" = "uninstall" ]; then
       helm uninstall $chart_name -n $env
     fi
