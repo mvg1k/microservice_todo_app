@@ -1,4 +1,4 @@
-namespace: dev
+namespace: prod
 deployment:
   name: todos-api-deployment
 replicas: 1

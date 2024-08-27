@@ -3,9 +3,12 @@ kind: Service
 metadata:
   name: {{ .Values.service.name }}
 spec:
+  type: {{ .Values.service.nodePort.type }}  # Використовуйте значення типу з `values.yaml`
   ports:
     - name: http
-      port: {{ .Values.service.port }}
-      targetPort:  8080
+      port: {{ .Values.service.nodePort.port }}  # Порт, на якому сервіс буде доступний всередині кластера
+      targetPort: 8080  # Порт всередині контейнера
+      nodePort: {{ .Values.service.nodePort.nodePort }}  # Порт на ноді для доступу ззовні
   selector:
     app: frontend
+

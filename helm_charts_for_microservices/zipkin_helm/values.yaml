@@ -1,4 +1,4 @@
-namespace: dev
+namespace: prod
 deployment:
   name: zipkin-deployment
 replicas: 1

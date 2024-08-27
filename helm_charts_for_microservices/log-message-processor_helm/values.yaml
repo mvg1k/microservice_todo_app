@@ -1,4 +1,4 @@
-namespace: dev
+namespace: prod
 deployment:
   name: log-message-processor-deployment
 replicas: 1

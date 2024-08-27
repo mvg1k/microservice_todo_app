@@ -1,16 +1,18 @@
 #!/bin/bash
+set -e
+CHARTS_DIR="./helm_charts_for_microservices"
 
-helm install frontend-dev frontend/ -f frontend/values-dev.yaml -n dev
+helm install redis "$CHARTS_DIR/redis_helm" -f "$CHARTS_DIR/redis_helm/values.yaml" -n prod
 
-helm install auth-api-dev auth-api_helm/ -f auth-api_helm/values.yaml -n dev
+helm install users-api "$CHARTS_DIR/users-api_helm" -f "$CHARTS_DIR/users-api_helm/values.yaml" -n prod
 
-helm install log-message-processor-dev log-message-processor_helm/ -f log-message-processor_helm/values.yaml -n dev
+helm install auth-api "$CHARTS_DIR/auth-api_helm" -f "$CHARTS_DIR/auth-api_helm/values.yaml" -n prod
 
-helm install redis-dev redis_helm/ -f redis_helm/values.yaml -n dev
+helm install todos-api "$CHARTS_DIR/todos-api_helm" -f "$CHARTS_DIR/todos-api_helm/values.yaml" -n prod
 
-helm install todos-api-dev todos-api_helm/ -f todos-api_helm/values.yaml -n dev
+helm install log-message-processor "$CHARTS_DIR/log-message-processor_helm" -f "$CHARTS_DIR/log-message-processor_helm/values.yaml" -n prod
 
-helm install users-api-dev users-api_helm/ -f users-api_helm/values.yaml -n dev
+helm install frontend "$CHARTS_DIR/frontend" -f "$CHARTS_DIR/frontend/values.yaml" -n prod
 
-helm install zipkin-dev zipkin_helm/ -f zipkin_helm/values.yaml -n dev
+helm install zipkin "$CHARTS_DIR/zipkin_helm" -f "$CHARTS_DIR/zipkin_helm/values.yaml" -n prod
 
