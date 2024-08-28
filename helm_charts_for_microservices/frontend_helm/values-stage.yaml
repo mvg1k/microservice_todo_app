@@ -1,13 +1,13 @@
-namespace: prod
+namespace: stage
 deployment:
   name: frontend-deployment
   replicas: 1
 
 service:
-  name: frontend  # Додано ім'я сервісу
+  name: frontend
   nodePort:
     name: frontend-nodeport
     type: NodePort
     port: 8080
-    nodePort: 30001
+    nodePort: 30010
 

@@ -1,4 +1,4 @@
-namespace: prod
+namespace: stage
 deployment:
   name: users-api-deployment
 replicas: 1
